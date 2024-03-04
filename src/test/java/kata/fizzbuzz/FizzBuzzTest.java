@@ -21,18 +21,38 @@ public class FizzBuzzTest {
     public void shouldPrintFizzForMultipleOfThree() {
         FizzBuzz fb = new FizzBuzz();
         List<String> fizzBuzz = fb.fizzBuzz();
+        int multiplesOfThree = 3;
+        int multiplesOfFive = 5;
 
         int counter = 1;
 
         while (counter < 100) {
-            if (counter % 3 == 0) {
+            if (counter % multiplesOfThree == 0 && !(counter % multiplesOfFive == 0)) {
                 assertEquals("Fizz", fizzBuzz.get(counter - 1));
             }
             counter++;
         }
 
     }
-//    But for multiples of three print "Fizz" instead of the number
+
+    @Test
+    public void shouldPrintBuzzForMultipleOfFive() {
+        FizzBuzz fb = new FizzBuzz();
+        List<String> fizzBuzz = fb.fizzBuzz();
+        int multiplesOfThree = 3;
+        int multiplesOfFive = 5;
+
+        int counter = 1;
+
+        while (counter < 100) {
+            if (counter % multiplesOfFive == 0 && !(counter % multiplesOfThree == 0)) {
+                assertEquals("Buzz", fizzBuzz.get(counter - 1));
+            }
+            counter++;
+        }
+
+    }
+
 //    and for the multiples of five print "Buzz".
 //    For numbers which are multiples of both three and five print "FizzBuzz".
 }
