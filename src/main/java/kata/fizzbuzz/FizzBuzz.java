@@ -24,7 +24,9 @@ public class FizzBuzz {
         int multipleOfFive = 5;
 
         for (int i = 0; i < 99; i++) {
-            if ((i + 1) % multipleOfThree == 0 && !((i + 1) % multipleOfFive == 0)) {
+            if ((i + 1) % multipleOfThree == 0 && (i + 1) % multipleOfFive == 0) {
+                fizzBuzz.add("FizzBuzz");
+            } else if ((i + 1) % multipleOfThree == 0 && !((i + 1) % multipleOfFive == 0)) {
                 fizzBuzz.add("Fizz");
             } else if ((i + 1) % multipleOfFive == 0 && !((i + 1) % multipleOfThree == 0)) {
                 fizzBuzz.add("Buzz");

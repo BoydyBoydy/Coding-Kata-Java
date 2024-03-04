@@ -53,6 +53,23 @@ public class FizzBuzzTest {
 
     }
 
-//    and for the multiples of five print "Buzz".
+    @Test
+    public void shouldPrintBuzzForMultipleOfThreeAndMultipleOfFive() {
+        FizzBuzz fb = new FizzBuzz();
+        List<String> fizzBuzz = fb.fizzBuzz();
+        int multiplesOfThree = 3;
+        int multiplesOfFive = 5;
+
+        int counter = 1;
+
+        while (counter < 100) {
+            if (counter % multiplesOfFive == 0 && counter % multiplesOfThree == 0) {
+                assertEquals("FizzBuzz", fizzBuzz.get(counter - 1));
+            }
+            counter++;
+        }
+
+    }
+
 //    For numbers which are multiples of both three and five print "FizzBuzz".
 }
