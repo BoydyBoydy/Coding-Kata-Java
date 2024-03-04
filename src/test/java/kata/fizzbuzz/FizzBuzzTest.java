@@ -13,9 +13,25 @@ public class FizzBuzzTest {
         FizzBuzz fb = new FizzBuzz();
         List<Integer> listOf100 = fb.print100();
         assertEquals(100, listOf100.size());
+        assertEquals(1, listOf100.get(0));
+        assertEquals(100, listOf100.get(99));
     }
 
-//    Write a program that prints the numbers from 1 to 100.
+    @Test
+    public void shouldPrintFizzForMultipleOfThree() {
+        FizzBuzz fb = new FizzBuzz();
+        List<String> fizzBuzz = fb.fizzBuzz();
+
+        int counter = 1;
+
+        while (counter < 100) {
+            if (counter % 3 == 0) {
+                assertEquals("Fizz", fizzBuzz.get(counter - 1));
+            }
+            counter++;
+        }
+
+    }
 //    But for multiples of three print "Fizz" instead of the number
 //    and for the multiples of five print "Buzz".
 //    For numbers which are multiples of both three and five print "FizzBuzz".
