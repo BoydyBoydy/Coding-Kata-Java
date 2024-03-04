@@ -71,5 +71,15 @@ public class FizzBuzzTest {
 
     }
 
-//    For numbers which are multiples of both three and five print "FizzBuzz".
+    @Test
+    public void shouldPrintEndResult() {
+        FizzBuzz fb = new FizzBuzz();
+        List<String> fizzBuzz = fb.fizzBuzz();
+
+        assertEquals(100, fizzBuzz.size());
+
+        for (String i : fizzBuzz) {
+            System.out.println(i);
+        }
+    }
 }

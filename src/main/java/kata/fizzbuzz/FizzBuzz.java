@@ -20,15 +20,12 @@ public class FizzBuzz {
         List<String> fizzBuzz = new ArrayList<>();
         List<Integer> listOf100 = print100();
 
-        int multipleOfThree = 3;
-        int multipleOfFive = 5;
-
-        for (int i = 0; i < 99; i++) {
-            if ((i + 1) % multipleOfThree == 0 && (i + 1) % multipleOfFive == 0) {
+        for (int i = 0; i < 100; i++) {
+            if (multipleOfThree(i) && multipleOfFive(i)) {
                 fizzBuzz.add("FizzBuzz");
-            } else if ((i + 1) % multipleOfThree == 0 && !((i + 1) % multipleOfFive == 0)) {
+            } else if (multipleOfThree(i) && !multipleOfFive(i)) {
                 fizzBuzz.add("Fizz");
-            } else if ((i + 1) % multipleOfFive == 0 && !((i + 1) % multipleOfThree == 0)) {
+            } else if (!multipleOfThree(i) && multipleOfFive(i)) {
                 fizzBuzz.add("Buzz");
             } else {
                 fizzBuzz.add(listOf100.get(i).toString());
@@ -38,5 +35,13 @@ public class FizzBuzz {
 
         return fizzBuzz;
 
+    }
+
+    private static boolean multipleOfFive(int currentIndex) {
+        return (currentIndex + 1) % 5 == 0;
+    }
+
+    private static boolean multipleOfThree(int currentIndex) {
+        return (currentIndex + 1) % 3 == 0;
     }
 }
