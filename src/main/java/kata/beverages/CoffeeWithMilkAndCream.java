@@ -3,6 +3,14 @@ package kata.beverages;
 public class CoffeeWithMilkAndCream extends Coffee {
     @Override
     public double price() {
-        return super.price() +  0.25;
+
+        double endValue;
+        Milk milk = new Milk();
+        Cream cream = new Cream();
+        endValue = super.price();
+        endValue += milk.extraPrice();
+        endValue += cream.extraPrice();
+
+        return endValue;
     }
 }

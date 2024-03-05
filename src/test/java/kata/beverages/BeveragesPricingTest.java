@@ -48,4 +48,7 @@ public class BeveragesPricingTest {
         HotChocolateWithCream hotChocolateWithCream = new HotChocolateWithCream();
         assertThat(hotChocolateWithCream.price(), is(closeTo(1.60, 0.001)));
     }
+
+
+    // We'd like you to add an optional cinnamon supplement that costs 0.05€ to all our existing catalog of beverages.
 }

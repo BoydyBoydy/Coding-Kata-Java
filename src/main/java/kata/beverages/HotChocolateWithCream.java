@@ -3,6 +3,12 @@ package kata.beverages;
 public class HotChocolateWithCream extends HotChocolate {
     @Override
     public double price() {
-        return 1.45 + 0.15;
+
+        double endValue;
+        Cream cream = new Cream();
+        endValue = super.price();
+        endValue += cream.extraPrice();
+
+        return endValue;
     }
 }
