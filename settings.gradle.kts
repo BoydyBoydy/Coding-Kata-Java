@@ -1,2 +1,2 @@
-rootProject.name = "Coding-Kata-Java2"
+rootProject.name = "Coding-Kata-Java"
 
