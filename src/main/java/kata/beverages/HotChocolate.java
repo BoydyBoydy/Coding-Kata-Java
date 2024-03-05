@@ -10,7 +10,7 @@ public class HotChocolate implements Beverage {
     }
 
     @Override
-    public double addExtras(Extras extra) {
-        return currentPrice += extra.extraPrice();
+    public void addExtras(Extras extra) {
+        currentPrice += extra.extraPrice();
     }
 }

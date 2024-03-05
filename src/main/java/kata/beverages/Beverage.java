@@ -4,5 +4,5 @@ public interface Beverage {
 
     double price();
 
-    double addExtras(Extras extra);
+    void addExtras(Extras extra);
 }
