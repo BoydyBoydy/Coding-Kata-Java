@@ -22,7 +22,7 @@ tasks.test {
     // - Parrot - DONE - https://github.com/emilybache/Parrot-Refactoring-Kata/tree/main
     useJUnit()
     // - Beverages - DONE - https://github.com/trikitrok/beverages_pricing_refactoring_kata/tree/master
-    // - PromotionText - WIP - https://github.com/nealhu/promotion-text-kata/tree/master
+    // - PromotionText - DONE - https://github.com/nealhu/promotion-text-kata/tree/master
 }
 // LATER
 // https://github.com/emilybache/Lift-Kata
