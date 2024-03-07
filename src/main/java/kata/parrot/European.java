@@ -3,7 +3,7 @@ package kata.parrot;
 public class European extends Parrot {
 
     @Override
-    public double getSpeed() {
+    double getSpeed() {
         return super.getBaseSpeed();
     }
 
