@@ -29,10 +29,8 @@ public class PromotionTextDecoratorTest {
 
         String promotionText = PromotionTextDecorator.decorate(product);
 
-        assertEquals(promotionText, description,
-                "Returned promotion text should be identical to its description");
-        assertEquals(product.getPromotionText(), description,
-                "product's promotion text should be identical to its description");
+        assertEquals("Returned promotion text should be identical to its description", promotionText, description);
+        assertEquals("Product's promotion text should be identical to its description", product.getPromotionText(), description);
     }
 
     @Test
@@ -49,10 +47,8 @@ public class PromotionTextDecoratorTest {
 
         String promotionText = PromotionTextDecorator.decorate(product);
 
-        assertEquals(promotionText, description,
-                "Returned promotion text should be identical to its description");
-        assertEquals(product.getPromotionText(), description,
-                "product's promotion text should be identical to its description");
+        assertEquals("Returned promotion text should be identical to its description", promotionText, description);
+        assertEquals("Product's promotion text should be identical to its description", product.getPromotionText(), description);
     }
 
     @Test
@@ -69,10 +65,8 @@ public class PromotionTextDecoratorTest {
         String promotionText = PromotionTextDecorator.decorate(product);
 
         String expected = String.format("Free shipping!\n%s\nFree shipping!", description);
-        assertEquals(promotionText, expected,
-                "Returned promotion text should have free shipping header and footer");
-        assertEquals(product.getPromotionText(), expected,
-                "product's promotion text should have free shipping header and footer");
+        assertEquals("Returned promotion text should have free shipping header and footer", promotionText, expected);
+        assertEquals("Product's promotion text should have free shipping header and footer", product.getPromotionText(), expected);
     }
 
     @Test
@@ -93,10 +87,8 @@ public class PromotionTextDecoratorTest {
         String expected =
                 String.format("Don't miss the deal, $%d off!\n%s\nDon't miss the deal, $%d off!",
                         offInDollar, description, offInDollar);
-        assertEquals(promotionText, expected,
-                "Returned promotion text should have discount header and footer");
-        assertEquals(product.getPromotionText(), expected,
-                "product's promotion text should have discount header and footer");
+        assertEquals("Returned promotion text should have discount header and footer", promotionText, expected);
+        assertEquals("Product's promotion text should have discount header and footer", product.getPromotionText(), expected);
     }
 
     @Test
@@ -118,10 +110,8 @@ public class PromotionTextDecoratorTest {
         String freeShippingText = "Free shipping!";
         String expected =
                 String.join("\n", offText, freeShippingText, description, freeShippingText, offText);
-        assertEquals(promotionText, expected,
-                "Returned promotion text should have both discount and free shipping headers and footers");
-        assertEquals(product.getPromotionText(), expected,
-                "product's promotion text should have both discount and free shipping headers and footers");
+        assertEquals("Returned promotion text should have both discount and free shipping headers and footers", promotionText, expected);
+        assertEquals("Product's promotion text should have both discount and free shipping headers and footers", product.getPromotionText(), expected);
     }
 
     @Test
@@ -138,10 +128,8 @@ public class PromotionTextDecoratorTest {
 
         String promotionText = PromotionTextDecorator.decorate(product);
 
-        assertEquals(promotionText, description,
-                "Returned promotion text should be identical to its description");
-        assertEquals(product.getPromotionText(), description,
-                "product's promotion text should be identical to its description");
+        assertEquals("Returned promotion text should be identical to its description", promotionText, description);
+        assertEquals("Product's promotion text should be identical to its description", product.getPromotionText(), description);
     }
 
     @Test
@@ -157,9 +145,7 @@ public class PromotionTextDecoratorTest {
 
         String promotionText = PromotionTextDecorator.decorate(product);
 
-        assertEquals(promotionText, description,
-                "Returned promotion text should be identical to its description");
-        assertEquals(product.getPromotionText(), description,
-                "product's promotion text should be identical to its description");
+        assertEquals("Returned promotion text should be identical to its description", promotionText, description);
+        assertEquals("Product's promotion text should be identical to its description", product.getPromotionText(), description);
     }
 }
