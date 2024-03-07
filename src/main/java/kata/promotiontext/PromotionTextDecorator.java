@@ -15,41 +15,63 @@ public class PromotionTextDecorator {
      * @param product the product
      * @return the generated promotion text
      */
+
+    private final Product product;
+    private final List<String> stringList;
+
     public static String decorate(Product product) {
-        List<String> list = new ArrayList<>();
+        return new PromotionTextDecorator(product).decorate();
+    }
+
+    public String decorate() {
         if (product.isPromoted()) {
-            if (!product.isHideDiscount()) {
-                int discount = product.getOldCentPrice() - product.getCentPrice();
-                if (discount > 0) {
-                    list.add(String.format("Don't miss the deal, $%d off!",
-                            (product.getOldCentPrice() - product.getCentPrice()) / 100));
-                }
-            }
-            if (product.isFreeShipping()) {
-                list.add("Free shipping!");
-            }
+            addPromotionText();
+        } else {
+            addDescription();
         }
-
-        list.add(product.getDescription());
-
-        if (product.isPromoted()) {
-            if (product.isFreeShipping()) {
-                list.add("Free shipping!");
-            }
-
-            if (!product.isHideDiscount()) {
-                int discount = product.getOldCentPrice() - product.getCentPrice();
-                if (discount > 0) {
-                    list.add(String.format("Don't miss the deal, $%d off!",
-                            (product.getOldCentPrice() - product.getCentPrice()) / 100));
-                }
-            }
-        }
-
-        product.setPromotionText(String.join("\n", list));
+        setPromotionText();
         return product.getPromotionText();
     }
 
-    protected PromotionTextDecorator() {
+    private void setPromotionText() {
+        setPromotionText(product, stringList);
+    }
+
+    private void addDescription() {
+        addDescription(product, stringList);
+    }
+
+    private void addPromotionText() {
+        applyDiscount(product, stringList);
+        addFreeShipping(product, stringList);
+        addDescription();
+        addFreeShipping(product, stringList);
+        applyDiscount(product, stringList);
+    }
+
+    private static void setPromotionText(Product product, List<String> list) {
+        product.setPromotionText(String.join("\n", list));
+    }
+
+    private static void addDescription(Product product, List<String> list) {
+        list.add(product.getDescription());
+    }
+
+    private static void applyDiscount(Product product, List<String> list) {
+        if (!product.isHideDiscount() && (product.getCentPrice() < product.getOldCentPrice())) {
+            list.add(String.format("Don't miss the deal, $%d off!",
+                    (product.getOldCentPrice() - product.getCentPrice()) / 100));
+        }
+    }
+
+    private static void addFreeShipping(Product product, List<String> list) {
+        if (product.isFreeShipping()) {
+            list.add("Free shipping!");
+        }
+    }
+
+    protected PromotionTextDecorator(Product product) {
+        this.product = product;
+        stringList = new ArrayList<>();
     }
 }

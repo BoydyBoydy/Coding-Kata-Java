@@ -10,11 +10,6 @@ import static org.junit.Assert.assertEquals;
  * completing the kata
  */
 public class PromotionTextDecoratorTest {
-    @Test
-    public void constructor() {
-        // for 100% coverage
-        new PromotionTextDecorator();
-    }
 
     @Test
     public void decorate_notPromotedNoFreeShippingNoDiscount() {
