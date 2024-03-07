@@ -17,11 +17,17 @@ dependencies {
 }
 
 tasks.test {
-    useJUnitPlatform()
+//    useJUnitPlatform()
     // - FizzBuzz - DONE - Self Run
-    // - Parrot - WIP - https://github.com/emilybache/Parrot-Refactoring-Kata/tree/main
-//    useJUnit()
+    // - Parrot - DONE - https://github.com/emilybache/Parrot-Refactoring-Kata/tree/main
+    useJUnit()
     // - Beverages - DONE - https://github.com/trikitrok/beverages_pricing_refactoring_kata/tree/master
-    // - PromotionText - https://github.com/nealhu/promotion-text-kata/tree/master
+    // - PromotionText - WIP - https://github.com/nealhu/promotion-text-kata/tree/master
 }
-
+// LATER
+// https://github.com/emilybache/Lift-Kata
+// https://github.com/emilybache/Necklace-Refactoring-Kata
+// https://github.com/emilybache/DeliveryController-Refactoring-Kata/tree/main
+// https://github.com/emilybache/Racing-Car-Katas
+// https://github.com/emilybache/CustomerSync-Refactoring-Kata
+// https://github.com/emilybache/Email-Sender-Refactoring-Kata
